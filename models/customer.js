@@ -15,12 +15,40 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   customer.init({
-    name: DataTypes.STRING,
-    address: DataTypes.STRING,
-    phone: DataTypes.STRING,
+    name: {
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: {
+          messsage: "Name can not be empty"
+        }
+      }
+    },
+    address: {
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: {
+          messsage: "Name can not be empty"
+        }
+      }
+    },
+    phone: {
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: {
+          messsage: "Name can not be empty"
+        }
+      }
+    },
     start_storage: DataTypes.DATEONLY,
     end_storage: DataTypes.DATEONLY,
-    nopol: DataTypes.STRING
+    nopol: {
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: {
+          messsage: "Name can not be empty"
+        }
+      }
+    }
   }, {
     sequelize,
     modelName: 'customer',

@@ -15,9 +15,30 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   bike.init({
-    name: DataTypes.STRING,
-    type: DataTypes.STRING,
-    merk: DataTypes.STRING
+    name: {
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: {
+          messsage: "Name can not be empty"
+        }
+      }
+    },
+    type: {
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: {
+          messsage: "Name can not be empty"
+        }
+      }
+    },
+    merk: {
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: {
+          messsage: "Name can not be empty"
+        }
+      }
+    }
   }, {
     sequelize,
     modelName: 'bike',
